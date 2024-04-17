@@ -1,0 +1,27 @@
+.genre-component {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.genre-image img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 20%;
+}
+
+.genre-list-item {
+  list-style: none;
+}
+
+.genre-list {
+  margin: 0px;
+  padding: 0px;
+}
+
+.genre-title:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

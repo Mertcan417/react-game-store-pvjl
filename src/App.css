@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  transition: background-color 0.3s ease;
+
+  background-color: #ffffff;
+  color: #000000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 20px;
+}
+
+.dark-mode {
+  background-color: #121212; /* Set the background color for dark mode */
+  color: white;
+}
+
+.header-component {
+  grid-area: header;
+}
+
+.sidebar-component {
+  grid-area: sidebar;
+}
+
+.gamesection-component {
+  grid-area: gamesection;
+}
+
+.search-section-component {
+  grid-area: gamesection;
+  margin-top: 33px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-areas:
+    "header header"
+    "sidebar gamesection";
+}

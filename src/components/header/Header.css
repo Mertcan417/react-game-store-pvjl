@@ -1,0 +1,66 @@
+/* Header.css */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  gap: 10px;
+}
+
+.searchbar-container {
+  justify-self: center;
+  flex-grow: 1;
+  position: relative;
+}
+
+.searchbar {
+  display: flex;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 20%;
+}
+
+.darkmode-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search-result {
+  transition: 0.8s;
+  list-style: none;
+  padding: 8px;
+  border-radius: 20px;
+}
+
+.search-result:hover {
+  background-color: #434343;
+  cursor: pointer;
+}
+
+.search-results-container {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  gap: 10px;
+}
+
+.spacer-1 {
+  width: 40px;
+}
+
+.spacer-2 {
+  width: 158.5px;
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  padding: 0px;
+}
