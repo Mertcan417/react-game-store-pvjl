@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./DropdownButton.css"; // Import or define styles
+import { useTheme } from "../../contexts/ThemeContext";
 
 export default function DropdownButton({ title, options }) {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const { isDarkMode } = useTheme();
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -10,7 +12,8 @@ export default function DropdownButton({ title, options }) {
 
   return (
     <div className={`dropdown ${isDropdownOpen ? "open" : ""}`}>
-      <button className="dropdown-button" onClick={toggleDropdown}>
+      <button className={`dropdown-button ${isDarkMode ? "darkmode" : "lightmode"}`}
+ onClick={toggleDropdown}>
         {title}{" "}
         <span>
           <svg

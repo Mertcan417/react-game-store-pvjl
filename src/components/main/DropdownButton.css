@@ -3,7 +3,7 @@
   display: inline-block;
 }
 
-.dropdown-button {
+.dropdown-button.darkmode {
   padding: 12px;
   cursor: pointer;
   background-color: #383838;
@@ -16,6 +16,18 @@
   gap: 8px;
 }
 
+.dropdown-button.lightmode {
+  padding: 12px;
+  cursor: pointer;
+  background-color: #efefef;
+  color: #383838;
+  border-radius: 7px;
+  border-width: 0;
+  font-weight: bold;
+  display: flex;
+  font-size: 17px;
+  gap: 8px;
+}
 .arrow {
   display: inline-block;
   margin-left: 5px;

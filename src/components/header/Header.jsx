@@ -42,7 +42,7 @@ export default function Header({ setSelectedGame, setGameSearchHistory }) {
   };
 
   return (
-    <div className="header-component">
+    <div className={"header-component"}>
       <div className="header">
         <div className="logo-container">
           <Logo

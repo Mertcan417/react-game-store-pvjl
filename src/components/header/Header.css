@@ -14,8 +14,16 @@
   position: relative;
 }
 
-.searchbar {
+.searchbar.darkmode {
   display: flex;
+  background-color: #202020;
+  color: #ffffff;
+}
+
+.searchbar.lightmode {
+  display: flex;
+  background-color: #ffffff;
+  color: black;
 }
 
 .search-icon {

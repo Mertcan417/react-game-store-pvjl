@@ -1,5 +1,18 @@
-.card {
+.card.darkmode {
   background-color: #1d1d1d;
+  color: white;
+  transition: 0.8s;
+  width: 350px;
+  min-height: 350px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.card.lightmode {
+  background-color: #ebecf0;
+  color: black;
   transition: 0.8s;
   width: 350px;
   min-height: 350px;
@@ -53,12 +66,22 @@
   align-self: flex-end;
 }
 
-.game-rating {
+.game-rating.darkmode {
   display: inline;
   margin: 0px;
   margin-left: auto;
   background-color: #303733;
   color: #bbd4c1;
+  padding: 2px 15px;
+  border-radius: 7px;
+}
+
+.game-rating.lightmode {
+  display: inline;
+  margin: 0px;
+  margin-left: auto;
+  background-color: #bbd4c1;
+  color: black;
   padding: 2px 15px;
   border-radius: 7px;
 }

@@ -1,4 +1,5 @@
 import "./Gamecard.css";
+import { useTheme } from "../../../contexts/ThemeContext";
 
 export default function GameCard({
   title,
@@ -8,6 +9,9 @@ export default function GameCard({
   description,
   setSelectedGame,
 }) {
+
+  const { isDarkMode } = useTheme();
+
   const platformIcons = {
     WIN: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/windows-icon.png",
     MAC: "https://cdn-icons-png.flaticon.com/512/2/2235.png",
@@ -27,7 +31,7 @@ export default function GameCard({
     // description={selectedGame.description}
 
     <div
-      className="card"
+      className={`card ${isDarkMode ? "darkmode" : "lightmode"}`}
       onClick={() =>
         setSelectedGame({
           name: title,
@@ -51,7 +55,7 @@ export default function GameCard({
               className="platform-icon"
             />
           ))}
-          <h5 className="game-rating">{rating}</h5>
+          <h5 className={`game-rating ${isDarkMode ? "darkmode" : "lightmode"}`}>{rating}</h5>
         </div>
         <h2 className="game-title">{title}</h2>
         {description ?? <p>{description}</p>}
