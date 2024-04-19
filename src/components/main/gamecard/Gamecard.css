@@ -26,7 +26,14 @@
   background-color: #434343;
 }
 
-.arrow-image {
+.arrow-image.lightmode {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.arrow-image.darkmode {
   width: 30px;
   height: 30px;
   filter: invert();

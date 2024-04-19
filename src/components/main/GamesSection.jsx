@@ -3,6 +3,8 @@ import DropdownButton from "./DropdownButton.jsx";
 import GameCardList from "./gamecard/GameCardList.jsx";
 import "./GamesSection.css";
 import SearchedCard from "./gamecard/SearchedCard.jsx";
+import { useTheme } from "../../contexts/ThemeContext.jsx";
+
 // import SearchedCard from "./SearchedCard.js";
 
 export default function GamesSection({
@@ -12,6 +14,8 @@ export default function GamesSection({
   selectedGenre,
   setSelectedGame,
 }) {
+
+  const {isDarkMode} = useTheme();
   const [showPreviousGame, setShowPreviousGame] = useState(false);
 
   if (selectedGame === null && gameSearchHistory.length === 0) {
@@ -71,7 +75,7 @@ export default function GamesSection({
       <div className="search-section-component">
         <img
           src="arrow.png"
-          className="arrow-image"
+          className={`arrow-image ${isDarkMode ? "darkmode" : "lightmode"}`}
           alt="arrow"
           onClick={() => {
             // gameSearchHistory.length > 0
