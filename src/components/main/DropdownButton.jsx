@@ -34,7 +34,7 @@ export default function DropdownButton({ title, options }) {
           </svg>
         </span>
       </button>
-      <div className="dropdown-content">
+      <div className={`dropdown-content ${isDarkMode ? "darkmode" : "lightmode"}`}>
         {options.map((option, index) => (
           <div className="dropdown-item" key={index}>
             {option}

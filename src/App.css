@@ -26,6 +26,8 @@
 
 .sidebar-component {
   grid-area: sidebar;
+  position: relative;
+  left: 15px;
 }
 
 .gamesection-component {

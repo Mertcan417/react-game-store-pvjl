@@ -8,10 +8,11 @@
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  max-height: 600px;
 }
 
 .card.lightmode {
-  background-color: #ebecf0;
+  background-color: #ebecf08f;
   color: black;
   transition: 0.8s;
   width: 350px;
@@ -20,10 +21,17 @@
   overflow: hidden;
   position: relative;
   cursor: pointer;
+  max-height: 600px;
+
+}
+
+.card-content{
+  overflow: hidden;
+  padding: 10px;
 }
 
 .card:hover {
-  background-color: #434343;
+  background-color: #808080d3;
 }
 
 .arrow-image.lightmode {
