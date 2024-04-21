@@ -1,8 +1,8 @@
 import { useState } from "react";
-import DropdownButton from "./DropdownButton.jsx";
-import GameCardList from "./gamecard/GameCardList.jsx";
+import DropdownButton from "../dropdownbutton/DropdownButton";
+import GameCardList from "../gamecardlist/GameCardList.jsx";
 import "./GamesSection.css";
-import SearchedCard from "./gamecard/SearchedCard.jsx";
+import SearchedCard from "../searchedcard/SearchedCard.jsx";
 import { useTheme } from "../../contexts/ThemeContext.jsx";
 
 // import SearchedCard from "./SearchedCard.js";

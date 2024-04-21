@@ -8,7 +8,7 @@ export default function Darkmode() {
     <>
       <label className="switch">
         <input type="checkbox" onChange={toggleTheme} checked={isDarkMode} />
-        <span className="slider round"/>
+        <span className="slider round" />
       </label>
       <span>Dark Mode</span>
     </>

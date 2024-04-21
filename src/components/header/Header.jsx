@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import SearchResults from "../main/gamecard/SearchResults.jsx";
-import Darkmode from "./Darkmode.jsx";
-import Logo from "./Logo.jsx";
-import Searchbar from "./Searchbar.jsx";
+import SearchResults from "../searchedresults/SearchResults.jsx";
+import Darkmode from "../darkmode/Darkmode.jsx";
+import Logo from "../logo/Logo.jsx";
+import Searchbar from "../searchbar/Searchbar.jsx";
 import "./Header.css";
 
 export default function Header({ setSelectedGame, setGameSearchHistory }) {

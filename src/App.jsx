@@ -1,5 +1,5 @@
 import { useState } from "react";
-import GamesSection from "./components/main/GamesSection.jsx";
+import GamesSection from "./components/gamessection/GamesSection.jsx";
 import SideBar from "./components/sidebar/Sidebar.jsx";
 import Header from "./components/header/Header.jsx";
 import {useTheme } from "./contexts/ThemeContext.jsx";

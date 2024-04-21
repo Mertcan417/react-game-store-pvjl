@@ -1,5 +1,5 @@
-import "./Gamecard.css";
-import { useTheme } from "../../../contexts/ThemeContext";
+import "./GameCard.css";
+import { useTheme } from "../../contexts/ThemeContext";
 
 export default function GameCard({
   title,
@@ -9,7 +9,6 @@ export default function GameCard({
   description,
   setSelectedGame,
 }) {
-
   const { isDarkMode } = useTheme();
 
   const platformIcons = {
@@ -55,7 +54,11 @@ export default function GameCard({
               className="platform-icon"
             />
           ))}
-          <h5 className={`game-rating ${isDarkMode ? "darkmode" : "lightmode"}`}>{rating}</h5>
+          <h5
+            className={`game-rating ${isDarkMode ? "darkmode" : "lightmode"}`}
+          >
+            {rating}
+          </h5>
         </div>
         <h2 className="game-title">{title}</h2>
         {description ?? <p>{description}</p>}

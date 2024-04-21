@@ -1,4 +1,4 @@
-import { GenreList } from "./Genre.jsx";
+import { GenreList } from "../genre/Genre.jsx";
 
 export default function Sidebar({ setSelectedGenre }) {
   return (

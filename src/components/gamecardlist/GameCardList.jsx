@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import GameCard from "./Gamecard.jsx";
+import GameCard from "../gamecard/GameCard";
 import "./GameCardList.css";
 export default function GameCardList({ selectedGenre, setSelectedGame }) {
   const [cards, setCards] = useState([]);

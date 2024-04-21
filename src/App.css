@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: black;
+}
+
 .app.lightmode {
   transition: background-color 0.3s ease;
   background-color: #ffffff;
