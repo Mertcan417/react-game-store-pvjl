@@ -25,6 +25,9 @@ export default function SearchedCard({
     <div className="searched-card">
       <div className="searched-card-header">
         <h1>{title}</h1>
+        <h5 className={`game-rating ${isDarkMode ? "darkmode" : "lightmode"}`}>
+          {rating}
+        </h5>
         <div className="card-platforms">
           {platforms.split(",").map((p) => (
             <img
@@ -35,10 +38,6 @@ export default function SearchedCard({
             />
           ))}
         </div>
-        <h5 className={`game-rating ${isDarkMode ? "darkmode" : "lightmode"}`}>
-          {" "}
-          {rating}
-        </h5>
       </div>
       <div className="searched-card-image">
         <img
