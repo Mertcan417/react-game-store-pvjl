@@ -3,10 +3,12 @@ export default function SearchResults({
   setSelectedGame,
   setGameSearchHistory,
 }) {
+
   return (
     <ul className="search-results">
       {results.map((result) => (
         <li
+          key={result.name}
           className="search-result"
           onClick={() => {
             setSelectedGame(result);

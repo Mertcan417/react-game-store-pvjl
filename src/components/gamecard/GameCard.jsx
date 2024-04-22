@@ -8,6 +8,7 @@ export default function GameCard({
   rating,
   description,
   setSelectedGame,
+  setGameSearchHistory,
 }) {
   const { isDarkMode } = useTheme();
 
@@ -23,25 +24,21 @@ export default function GameCard({
   };
 
   return (
-    // title={selectedGame.name}
-    // imgUrl={selectedGame.image}
-    // platforms={selectedGame.platforms}
-    // rating={selectedGame.store_uscore}
-    // description={selectedGame.description}
-
     <div
       className={`card ${isDarkMode ? "darkmode" : "lightmode"}`}
-      onClick={() =>
-        setSelectedGame({
+      onClick={() => {
+        const game = {
           name: title,
           image: imgUrl,
           platforms: platforms,
           store_uscore: rating,
           description: description,
-        })
-      }
+        };
+        setGameSearchHistory((prevHistory) => [...prevHistory, game]);
+        setSelectedGame(game);
+      }}
     >
-        <img className="card-image" src={imgUrl} alt="card"></img>
+      <img className="card-image" src={imgUrl} alt="card"></img>
       <div className="card-content">
         <div className="card-platforms">
           {platforms.split(",").map((p) => (

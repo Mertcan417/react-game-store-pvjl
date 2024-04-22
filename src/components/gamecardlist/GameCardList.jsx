@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import GameCard from "../gamecard/GameCard";
 import "./GameCardList.css";
 
-export default function GameCardList({ selectedGenre, setSelectedGame }) {
+export default function GameCardList({ selectedGenre, setSelectedGame, setGameSearchHistory }) {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -39,6 +39,7 @@ export default function GameCardList({ selectedGenre, setSelectedGame }) {
           rating={card.store_uscore}
           setSelectedGame={setSelectedGame}
           description={card.description}
+          setGameSearchHistory={setGameSearchHistory}
         />
       ))}
     </div>

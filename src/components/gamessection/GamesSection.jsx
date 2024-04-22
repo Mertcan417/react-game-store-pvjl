@@ -11,34 +11,24 @@ export default function GamesSection({
   selectedGenre,
   setSelectedGame,
 }) {
-
   const { isDarkMode } = useTheme();
-  const [showPreviousGame, setShowPreviousGame] = useState(false);
-  
-  if (selectedGame === null && gameSearchHistory.length === 0) {
-    // console.log("ER IS GEEN GAME GESELECTEERD EN DE GAMEHISTORY IS LEEG");
 
-    return (
-      <div className="gamesection-component">
-        <h1 className="title">Games</h1>
-        <GameCardList
-          selectedGenre={selectedGenre}
-          setSelectedGame={setSelectedGame}
-        ></GameCardList>
-      </div>
-    );
+  const homePage = (
+    <div className="gamesection-component">
+      <h1 className="title">Games</h1>
+      <GameCardList
+        selectedGenre={selectedGenre}
+        setSelectedGame={setSelectedGame}
+        setGameSearchHistory={setGameSearchHistory}
+      ></GameCardList>
+    </div>
+  );
+
+  if (gameSearchHistory.length === 0) {
+    return homePage;
   }
 
-  if (selectedGame !== null) {
-    // console.log("JE HEBT EEN GAME GESELECTEERD");
-
-    
-    // console.log(selectedGame);
-    if(gameSearchHistory.length == 0){
-      setGameSearchHistory([]);
-          setSelectedGame(null);
-    }
-
+  if (gameSearchHistory.length > 0) {
     return (
       <div className="search-section-component">
         <img
@@ -47,11 +37,11 @@ export default function GamesSection({
           alt="arrow"
           onClick={() => {
             const updateGameSearchHistory = gameSearchHistory.slice(0, -1);
-            setShowPreviousGame(true);
+            console.log(updateGameSearchHistory);
             setGameSearchHistory(updateGameSearchHistory);
           }}
         ></img>
-        {showPreviousGame === true && gameSearchHistory.length > 0 ? (
+        {gameSearchHistory.length > 0 ? (
           <SearchedCard
             title={gameSearchHistory[gameSearchHistory.length - 1].name}
             imgUrl={gameSearchHistory[gameSearchHistory.length - 1].image}

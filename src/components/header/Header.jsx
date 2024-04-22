@@ -8,7 +8,7 @@ import SearchIcon from "../searchicon/SearchIcon.jsx";
 
 export default function Header({
   setSelectedGame,
-  setGameSearchHistory,
+  setGameSearchHistory
 }) {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
