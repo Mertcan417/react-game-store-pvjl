@@ -41,9 +41,7 @@ export default function GameCard({
         })
       }
     >
-      <div className="card-image-container">
         <img className="card-image" src={imgUrl} alt="card"></img>
-      </div>
       <div className="card-content">
         <div className="card-platforms">
           {platforms.split(",").map((p) => (

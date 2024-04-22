@@ -14,22 +14,21 @@
   position: relative;
 }
 
-.searchbar.darkmode {
+.searchbar {
   display: flex;
-  background-color: #202020;
-  color: #ffffff;
+  color: black; /* Default text color */
 }
 
-.searchbar.lightmode {
-  display: flex;
-  background-color: #ffffff;
-  color: black;
+.searchbar.darkmode {
+  background-color: #202020; /* Dark mode background color */
+  color: #ffffff; /* Dark mode text color */
 }
 
 .search-icon {
   position: absolute;
   left: 10px;
-  top: 20%;
+  top: 50%; /* Adjusted to center vertically */
+  transform: translateY(-50%); /* Center vertically */
 }
 
 .darkmode-container {

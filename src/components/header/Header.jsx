@@ -4,8 +4,12 @@ import Darkmode from "../darkmode/Darkmode.jsx";
 import Logo from "../logo/Logo.jsx";
 import Searchbar from "../searchbar/Searchbar.jsx";
 import "./Header.css";
+import SearchIcon from "../searchicon/SearchIcon.jsx";
 
-export default function Header({ setSelectedGame, setGameSearchHistory }) {
+export default function Header({
+  setSelectedGame,
+  setGameSearchHistory,
+}) {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
   const [localGames, setLocalGames] = useState([]);
@@ -31,7 +35,7 @@ export default function Header({ setSelectedGame, setGameSearchHistory }) {
           value &&
           game.name.toString().toLowerCase().includes(value.toLowerCase())
       )
-      .splice(0, 7);
+      .splice(0, 8);
 
     setResults(filteredGames);
   };
@@ -42,7 +46,7 @@ export default function Header({ setSelectedGame, setGameSearchHistory }) {
   };
 
   return (
-    <div className={"header-component"}>
+    <div className="header-component">
       <div className="header">
         <div className="logo-container">
           <Logo
@@ -54,20 +58,7 @@ export default function Header({ setSelectedGame, setGameSearchHistory }) {
         </div>
 
         <div className="searchbar-container">
-          <div className="search-icon">
-            <svg
-              stroke="currentColor"
-              fill="currentColor"
-              stroke-width="0"
-              viewBox="0 0 16 16"
-              height="1em"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-            </svg>
-          </div>
-
+          <SearchIcon />
           <Searchbar
             onSearch={(e) => {
               handleChange(e.target.value);
@@ -76,7 +67,7 @@ export default function Header({ setSelectedGame, setGameSearchHistory }) {
           />
         </div>
         <div className="darkmode-container">
-          <Darkmode />
+          <Darkmode>Darkmode</Darkmode>
         </div>
       </div>
 

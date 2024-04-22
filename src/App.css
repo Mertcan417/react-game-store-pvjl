@@ -2,25 +2,22 @@
   box-sizing: border-box;
 }
 
-body{
-  background-color: black;
+.app {
+  padding: 25px;
+  transition: background-color 0.3s ease; /* Apply transition to background color */
 }
 
 .app.lightmode {
-  transition: background-color 0.3s ease;
   background-color: #ffffff;
   color: #000000;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 20px;
 }
 
 .app.darkmode {
-  transition: background-color 0.3s ease;
   background-color: #121212; /* Set the background color for dark mode */
   color: white;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 20px;
 }
 
@@ -34,12 +31,12 @@ body{
   left: 15px;
 }
 
-.gamesection-component {
+.gamesection-component,
+.search-section-component {
   grid-area: gamesection;
 }
 
 .search-section-component {
-  grid-area: gamesection;
   margin-top: 33px;
 }
 

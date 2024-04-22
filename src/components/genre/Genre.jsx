@@ -3,12 +3,10 @@ import "./Genre.css";
 export default function Genre({ img, title, onClick }) {
   return (
     <div className="genre-component">
-      <div className="genre-image">
-        <img src={img} alt={`${title} genre`}></img>
-      </div>
-      <div className="genre-title" onClick={() => onClick(title)}>
-        <h5>{title}</h5>
-      </div>
+      <img className="genre-image" src={img} alt={`${title} genre`}></img>
+      <h5 className="genre-title" onClick={() => onClick(title)}>
+        {title}
+      </h5>
     </div>
   );
 }

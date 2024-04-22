@@ -1,11 +1,8 @@
 import { useState } from "react";
-import DropdownButton from "../dropdownbutton/DropdownButton";
 import GameCardList from "../gamecardlist/GameCardList.jsx";
 import "./GamesSection.css";
 import SearchedCard from "../searchedcard/SearchedCard.jsx";
 import { useTheme } from "../../contexts/ThemeContext.jsx";
-
-// import SearchedCard from "./SearchedCard.js";
 
 export default function GamesSection({
   selectedGame,
@@ -15,62 +12,33 @@ export default function GamesSection({
   setSelectedGame,
 }) {
 
-  const {isDarkMode} = useTheme();
+  const { isDarkMode } = useTheme();
   const [showPreviousGame, setShowPreviousGame] = useState(false);
-
+  
   if (selectedGame === null && gameSearchHistory.length === 0) {
+    // console.log("ER IS GEEN GAME GESELECTEERD EN DE GAMEHISTORY IS LEEG");
+
     return (
       <div className="gamesection-component">
-        <div className="title">
-          <h1>Games</h1>
-        </div>
-        <div className="button-group">
-          <DropdownButton
-            className="dropdown-button-platforms"
-            title={"Platforms"}
-            options={[
-              "PC",
-              "PlayStation",
-              "Xbox",
-              "iOS",
-              "Android",
-              "Apple Macintosh",
-              "Linux",
-              "Nintendo",
-              "Atari",
-              "Commodore/ Amiga",
-              "SEGA",
-              "3DO",
-              "Neo Geo",
-              "Web",
-            ]}
-          />
-          <DropdownButton
-            className="dropdown-button-order-by"
-            title={"Order by:"}
-            options={[
-              "Relevance",
-              "Date added",
-              "Name",
-              "Release date",
-              "Popularity",
-              "Average rating",
-            ]}
-          />
-        </div>
-        <div className="game-cards">
-          {
-            <GameCardList
-              selectedGenre={selectedGenre}
-              setSelectedGame={setSelectedGame}
-            ></GameCardList>
-          }
-        </div>
+        <h1 className="title">Games</h1>
+        <GameCardList
+          selectedGenre={selectedGenre}
+          setSelectedGame={setSelectedGame}
+        ></GameCardList>
       </div>
     );
   }
 
   if (selectedGame !== null) {
+    // console.log("JE HEBT EEN GAME GESELECTEERD");
+
+    
+    // console.log(selectedGame);
+    if(gameSearchHistory.length == 0){
+      setGameSearchHistory([]);
+          setSelectedGame(null);
+    }
+
     return (
       <div className="search-section-component">
         <img
@@ -78,14 +46,12 @@ export default function GamesSection({
           className={`arrow-image ${isDarkMode ? "darkmode" : "lightmode"}`}
           alt="arrow"
           onClick={() => {
-            // gameSearchHistory.length > 0
             const updateGameSearchHistory = gameSearchHistory.slice(0, -1);
             setShowPreviousGame(true);
-            console.log("u want prev game!");
             setGameSearchHistory(updateGameSearchHistory);
           }}
         ></img>
-        {showPreviousGame === true ? (
+        {showPreviousGame === true && gameSearchHistory.length > 0 ? (
           <SearchedCard
             title={gameSearchHistory[gameSearchHistory.length - 1].name}
             imgUrl={gameSearchHistory[gameSearchHistory.length - 1].image}

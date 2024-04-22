@@ -1,24 +1,21 @@
-.searchbar-input.darkmode {
-  background-color: #202020;
-  color: #ececec;
+.searchbar-input {
   border-radius: 40px;
   width: 100%;
   height: 40px;
   padding-left: 35px;
   outline: none;
+}
+
+.searchbar-input.darkmode {
+  background-color: #202020;
+  color: #ececec;
 }
 
 .searchbar-input.lightmode {
   background-color: #ececec;
   color: #202020;
-  border-radius: 40px;
-  width: 100%;
-  height: 40px;
-  padding-left: 35px;
-  outline: none;
 }
 
-
-input:focus {
+.searchbar-input:focus {
   border: 4px solid #63b3ed;
 }

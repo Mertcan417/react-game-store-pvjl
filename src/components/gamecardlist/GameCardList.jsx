@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import GameCard from "../gamecard/GameCard";
 import "./GameCardList.css";
+
 export default function GameCardList({ selectedGenre, setSelectedGame }) {
   const [cards, setCards] = useState([]);
 
@@ -28,7 +29,7 @@ export default function GameCardList({ selectedGenre, setSelectedGame }) {
   }, [selectedGenre]);
 
   return (
-    <div className="card-list">
+    <div className="game-cards">
       {cards.map((card) => (
         <GameCard
           key={card.sid}
