@@ -4,7 +4,6 @@ export default function SearchedCard({
   platforms,
   rating,
   description,
-
 }) {
   const platformIcons = {
     WIN: "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/windows-icon.png",

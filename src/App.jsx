@@ -31,8 +31,8 @@ function App() {
       <div>
         <h1>Sorry, your screen resolution is not supported.</h1>
         <p>
-          Please adjust your display settings or try using the application on
-          a device with a larger screen.
+          Please adjust your display settings or try using the application on a
+          device with a larger screen.
         </p>
       </div>
     );

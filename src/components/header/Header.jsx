@@ -6,10 +6,7 @@ import Searchbar from "../searchbar/Searchbar.jsx";
 import "./Header.css";
 import SearchIcon from "../searchicon/SearchIcon.jsx";
 
-export default function Header({
-  setSelectedGame,
-  setGameSearchHistory
-}) {
+export default function Header({ setSelectedGame, setGameSearchHistory }) {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
   const [localGames, setLocalGames] = useState([]);

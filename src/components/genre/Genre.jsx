@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Genre.css";
+
 export default function Genre({ img, title, onClick }) {
   return (
     <div className="genre-component">
@@ -36,9 +37,8 @@ export function GenreList({ setSelectedGenre }) {
   return (
     <ul className="genre-list">
       {genres.map((genre) => (
-        <li className="genre-list-item">
+        <li key={genre.id} className="genre-list-item">
           <Genre
-            key={genre.id}
             img={genre.img}
             title={genre.title}
             onClick={handleGenreClick}

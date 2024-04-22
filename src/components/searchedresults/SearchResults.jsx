@@ -3,6 +3,11 @@ export default function SearchResults({
   setSelectedGame,
   setGameSearchHistory,
 }) {
+  // Ensure that handleSearchResults is correctly bound
+  const handleSearchResults = (result) => {
+    setSelectedGame(result);
+    setGameSearchHistory((prevHistory) => [...prevHistory, result]);
+  };
 
   return (
     <ul className="search-results">
@@ -10,10 +15,7 @@ export default function SearchResults({
         <li
           key={result.name}
           className="search-result"
-          onClick={() => {
-            setSelectedGame(result);
-            setGameSearchHistory((prevHistory) => [...prevHistory, result]);
-          }}
+          onClick={() => handleSearchResults(result)} // Pass the result to handleSearchResults directly
         >
           {result.name}
         </li>
