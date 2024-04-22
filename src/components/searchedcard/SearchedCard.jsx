@@ -1,3 +1,6 @@
+import "./SearchedCard.css";
+import { useTheme } from "../../contexts/ThemeContext";
+
 export default function SearchedCard({
   title,
   imgUrl,
@@ -16,6 +19,8 @@ export default function SearchedCard({
     return icon;
   };
 
+  const { isDarkMode } = useTheme();
+
   return (
     <div className="searched-card">
       <div className="searched-card-header">
@@ -30,7 +35,10 @@ export default function SearchedCard({
             />
           ))}
         </div>
-        <h5 className="game-rating"> {rating}</h5>
+        <h5 className={`game-rating ${isDarkMode ? "darkmode" : "lightmode"}`}>
+          {" "}
+          {rating}
+        </h5>
       </div>
       <div className="searched-card-image">
         <img
